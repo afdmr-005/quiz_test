@@ -25,7 +25,7 @@ body {
     margin-bottom: 15px;
 }
 
-button {
+#answers button {
     display: block;
     width: 100%;
     padding: 15px;
@@ -39,15 +39,36 @@ button {
     text-align: left;
 }
 
-button.correct { background-color: #28a745 !important; color: white !important; }
-button.wrong { background-color: #dc3545 !important; color: white !important; }
+/* To'g'ri va xato ranglari */
+button.correct { background-color: #28a745 !important; color: white !important; border-color: #218838 !important; }
+button.wrong { background-color: #dc3545 !important; color: white !important; border-color: #c82333 !important; }
 
-.controls { display: flex; gap: 10px; margin-top: 20px; }
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
 
-#next-btn { background-color: #28a745; color: white; text-align: center; font-weight: bold; border: none; }
-#finish-btn { background-color: #ffc107; color: black; text-align: center; font-weight: bold; border: none; }
-.retry-btn { background: #764ba2; color: white; text-align: center; border: none; }
+.controls button {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+#next-btn { background-color: #28a745; color: white; }
+#finish-btn { background-color: #ffc107; color: black; }
+.retry-btn { background: #764ba2; color: white; margin-top: 20px; width: 100%; }
 
 .hide { display: none !important; }
 
-#status { margin-top: 20px; font-size: 14px; color: #777; border-top: 1px solid #eee; padding-top: 10px; }
+#status {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
