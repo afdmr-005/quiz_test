@@ -18,8 +18,12 @@ body {
     text-align: center;
 }
 
-h1 { color: #333; font-size: 24px; margin-bottom: 20px; }
-h2 { font-size: 18px; color: #444; margin-bottom: 20px; line-height: 1.5; }
+#timer-box {
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
 
 button {
     display: block;
@@ -35,44 +39,15 @@ button {
     text-align: left;
 }
 
-button:hover { background: #e2e6ea; }
+button.correct { background-color: #28a745 !important; color: white !important; }
+button.wrong { background-color: #dc3545 !important; color: white !important; }
 
-/* To'g'ri va xato javoblar uchun ranglar */
-button.correct {
-    background-color: #28a745 !important;
-    color: white !important;
-    border-color: #218838 !important;
-}
+.controls { display: flex; gap: 10px; margin-top: 20px; }
 
-button.wrong {
-    background-color: #dc3545 !important;
-    color: white !important;
-    border-color: #c82333 !important;
-}
+#next-btn { background-color: #28a745; color: white; text-align: center; font-weight: bold; border: none; }
+#finish-btn { background-color: #ffc107; color: black; text-align: center; font-weight: bold; border: none; }
+.retry-btn { background: #764ba2; color: white; text-align: center; border: none; }
 
-/* Yakunlash tugmasi stili */
-#finish-btn {
-    margin-top: 20px;
-    background-color: #ffc107;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    border: none;
-}
+.hide { display: none !important; }
 
-.retry-btn {
-    background: #764ba2;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.hide { display: none; }
-
-#status {
-    margin-top: 25px;
-    font-size: 14px;
-    color: #777;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
+#status { margin-top: 20px; font-size: 14px; color: #777; border-top: 1px solid #eee; padding-top: 10px; }
