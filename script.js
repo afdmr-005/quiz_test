@@ -1,4 +1,4 @@
-    const quizData = [
+const quizData = [
     { q: "Oʻzbekiston Respublikasi Prezidentining 2017-yil 5-iyuldagi 5106-sonli farmoniga asosan harbiy akademik litseylar qanday nomlandi?", a: ["“Temurbeklar maktabi”", "“Jaloliddin Manguberdi maktabi”", "“Temurbeklar harbiy litseylari”", "“Bobur maktablari”"], c: 2 },
     { q: "Oʻzbekiston yoshlar ittifoqi faoliyatini takomillashtirishga doir kompleks chora-tadbirlar toʻgʻrisida Dasturi nechta yoʻnalish va banddan iborat?", a: ["4 yoʻnalish va 57 banddan", "4 yoʻnalish va 58 banddan", "5 yoʻnalish va 58 banddan", "5 yoʻnalish va 57 banddan"], c: 2 },
     { q: "Oʻzbekiston Respublikasi Konstitutsiyasiga asosan davlat hokimiyati qanday boʻlinadi?", a: ["Qonun chiqaruvchi, ijro etuvchi va sud", "Oliy Majlis Qonunchilik palatasi, Vazirlar Mahkamasi va oliy sud", "Oliy Majlis Senati, Vazirlar Mahkamasi va oliy sud", "Vazirlar Mahkamasi, xududiy hokimliklar va oliy sud"], c: 0 },
@@ -21,7 +21,7 @@
     { q: "“Oʻzbekiston yoshlar ittifoqi faoliyatini takomillashtirishga doir...” Qaror qachon qabul qilingan?", a: ["2017-yil 5-iyulda", "2017-yil 30-iyunda", "2017-yil 18-iyulda", "2017-yil 11-iyulda"], c: 2 },
     { q: "Oʻzbekiston yoshlar ittifoqi qaysi organ tomonidan roʻyxatdan oʻtkaziladi?", a: ["Adliya vazirligi", "Oliy taʼlim vazirligi", "Oliy sud", "Bosh prokuratura"], c: 0 },
     { q: "Boshlangʻich tashkilot yetakchisi qanday saylanadi?", a: ["Ochiq ovoz berish yoʻli bilan", "Snoq komissiyasi qaroriga asosan", "Pedagogik ilmiy yigʻilishda", "Tayinlanadi"], c: 0 },
-    { q: "“Yoshlarga oid davlat siyosati toʻgʻobsida”gi qonun nechta moddadan iborat?", a: ["35", "30", "23", "33"], c: 3 },
+    { q: "“Yoshlarga oid davlat siyosati toʻgʻrisida”gi qonun nechta moddadan iborat?", a: ["35", "30", "23", "33"], c: 3 },
     { q: "Oʻzbekiston yoshlar ittifoqi qanday tashkilot hisoblanadi?", a: ["Davlat tashkiloti", "Nodavlat notijorat tashkiloti", "Tijorat tashkiloti", "Xalqaro tashkilot"], c: 1 },
     { q: "Yangi tahrirdagi Konstitutsiyamizni qabul qilishda nechta davlat tajribasi oʻrganildi?", a: ["120 dan ortiq", "190 dan ortiq", "130 dan ortiq", "56 dan ortiq"], c: 1 },
     { q: "Konstitutsiyaning 25-moddasi: Inson hayotiga suiqasd qilish...", a: ["qonun bilan taʼqiqlangan", "xalqaro talabalrga mos emas", "eng ogʻir jinoyatdir", "oʻlim jazosiga olib keladi"], c: 2 },
@@ -82,7 +82,7 @@ function startTimer() {
         timerEl.innerText = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            autoSkip();
+            nextQuestion(); // Vaqt tugasa avtomatik keyingi savolga o'tish
         }
     }, 1000);
 }
@@ -93,7 +93,7 @@ function loadQuiz() {
     aEl.innerHTML = "";
     tEl.innerText = quizData.length;
     cEl.innerText = currentIdx + 1;
-    nextBtn.classList.add("hide"); // Har yangi savolda "Keyingi" yashiriladi
+    nextBtn.classList.add("hide"); 
 
     currentQuiz.a.forEach((ans, i) => {
         const btn = document.createElement("button");
@@ -105,30 +105,21 @@ function loadQuiz() {
 }
 
 function checkAnswer(selected, btn) {
-    clearInterval(timerInterval); // Javob berilganda vaqt to'xtaydi
+    // JAVOB BELGILANGANDA TAYMER TO'XTAMAYDI (setInterval to'xtatilmadi)
     const correct = quizData[currentIdx].c;
     const allBtns = document.querySelectorAll("#answers button");
     
-    allBtns.forEach(b => b.disabled = true); // Boshqa tugmalarni bosib bo'lmaydi
+    allBtns.forEach(b => b.disabled = true); 
 
     if (selected === correct) {
         btn.classList.add("correct");
         score++;
     } else {
         btn.classList.add("wrong");
-        allBtns[correct].classList.add("correct"); // To'g'ri javobni ko'rsatadi
+        allBtns[correct].classList.add("correct"); 
     }
     
-    // MUHIM: Faqat "Keyingi savol" tugmasini chiqaramiz, avtomatik o'tib ketmaydi!
     nextBtn.classList.remove("hide"); 
-}
-
-function autoSkip() {
-    const correct = quizData[currentIdx].c;
-    const allBtns = document.querySelectorAll("#answers button");
-    allBtns.forEach(b => b.disabled = true);
-    allBtns[correct].classList.add("correct");
-    nextBtn.classList.remove("hide"); // Vaqt tugasa ham "Keyingi" tugmasi chiqadi
 }
 
 function nextQuestion() {
