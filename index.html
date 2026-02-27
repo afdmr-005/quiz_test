@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siyosiy-Huquqiy Bilimlar Testi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-header">
+            <h1>Bilimingizni sinab ko'ring</h1>
+        </div>
+        <div id="quiz">
+            <h2 id="question">Savol yuklanmoqda...</h2>
+            <div id="answers"></div>
+            <div id="status">
+                Savol: <span id="current">1</span> / <span id="total">60</span>
+            </div>
+        </div>
+        <div id="result" class="hide">
+            <h2>Natija</h2>
+            <p id="scoreText"></p>
+            <button onclick="location.reload()" class="retry-btn">Qayta boshlash</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
