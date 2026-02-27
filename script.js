@@ -80,27 +80,40 @@ function loadQuiz() {
     currentQuiz.a.forEach((ans, i) => {
         const btn = document.createElement("button");
         btn.innerText = ans;
-        btn.onclick = () => checkAnswer(i);
+        btn.onclick = (e) => checkAnswer(i, e.target);
         aEl.appendChild(btn);
     });
 }
 
-function checkAnswer(selected) {
-    if (selected === quizData[currentIdx].c) {
+function checkAnswer(selected, btn) {
+    const correct = quizData[currentIdx].c;
+    const allBtns = document.querySelectorAll("#answers button");
+    allBtns.forEach(b => b.disabled = true);
+
+    if (selected === correct) {
+        btn.classList.add("correct");
         score++;
-    }
-    currentIdx++;
-    if (currentIdx < quizData.length) {
-        loadQuiz();
     } else {
-        showResult();
+        btn.classList.add("wrong");
+        allBtns[correct].classList.add("correct");
     }
+
+    setTimeout(() => {
+        currentIdx++;
+        if (currentIdx < quizData.length) {
+            loadQuiz();
+        } else {
+            showResult();
+        }
+    }, 1500);
 }
 
 function showResult() {
     document.getElementById("quiz").classList.add("hide");
     document.getElementById("result").classList.remove("hide");
-    document.getElementById("scoreText").innerText = `${quizData.length} tadan ${score} ta to'g'ri topdingiz!`;
+    document.getElementById("scoreText").innerText = 
+        `Test yakunlandi! \n Jami savollar: ${quizData.length} ta \n To'g'ri javoblar: ${score} ta`;
 }
 
+// BU QATOR JUDA MUHIM:
 loadQuiz();
