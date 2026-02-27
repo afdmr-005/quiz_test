@@ -1,5 +1,4 @@
-const quizData = [
-    // 1-VARIANT
+    const quizData = [
     { q: "Oʻzbekiston Respublikasi Prezidentining 2017-yil 5-iyuldagi 5106-sonli farmoniga asosan harbiy akademik litseylar qanday nomlandi?", a: ["“Temurbeklar maktabi”", "“Jaloliddin Manguberdi maktabi”", "“Temurbeklar harbiy litseylari”", "“Bobur maktablari”"], c: 2 },
     { q: "Oʻzbekiston yoshlar ittifoqi faoliyatini takomillashtirishga doir kompleks chora-tadbirlar toʻgʻrisida Dasturi nechta yoʻnalish va banddan iborat?", a: ["4 yoʻnalish va 57 banddan", "4 yoʻnalish va 58 banddan", "5 yoʻnalish va 58 banddan", "5 yoʻnalish va 57 banddan"], c: 2 },
     { q: "Oʻzbekiston Respublikasi Konstitutsiyasiga asosan davlat hokimiyati qanday boʻlinadi?", a: ["Qonun chiqaruvchi, ijro etuvchi va sud", "Oliy Majlis Qonunchilik palatasi, Vazirlar Mahkamasi va oliy sud", "Oliy Majlis Senati, Vazirlar Mahkamasi va oliy sud", "Vazirlar Mahkamasi, xududiy hokimliklar va oliy sud"], c: 0 },
@@ -15,8 +14,6 @@ const quizData = [
     { q: "Oliy Majlis Senati senatorligiga Prezident tomonidan necha nafar nomzod koʻrsatiladi?", a: ["15 nafar", "10 nafar", "9 nafar", "5 nafar"], c: 2 },
     { q: "Inson huquqlari Umumjahon Deklaratsiyasi qachon qabul qilingan?", a: ["1945 yil", "1946 yil", "1947 yil", "1948-yil"], c: 3 },
     { q: "Besh asrkim, nazmiy saroyni, Titratadi zanjirband bir sher. Shoir A.Oripov kimni nazarda tutgan?", a: ["Abduraxmon Jomiy", "Lutfiy", "Alisher Navoiy", "Zaxiriddin Muhammad Bobur"], c: 2 },
-
-    // 2-VARIANT
     { q: "Farmonga asosan Oʻzbekiston yoshlar ittifoqi va xotin qizlar qoʻmitasi qanday jurnal taʼsis etishi belgilangan?", a: ["“Saodat” jurnali", "“Dugonalar” jurnali", "“Qizlarjon” jurnali", "“Goʻzallik” jurnali"], c: 2 },
     { q: "Qonunchilik palatasi deputatligiga necha yoshdan saylanish mumkin?", a: ["21 yoshdan", "25 yoshdan", "35 yoshdan", "30 yoshdan"], c: 1 },
     { q: "Oʻzbekiston Respublikasi davlat madhiyasi qachon qabul qilingan?", a: ["1992-yil 8-dekabr", "1992-yil 10-dekabr", "1991-yil 10-dekabr", "1991-yil 8-dekabr"], c: 1 },
@@ -24,15 +21,13 @@ const quizData = [
     { q: "“Oʻzbekiston yoshlar ittifoqi faoliyatini takomillashtirishga doir...” Qaror qachon qabul qilingan?", a: ["2017-yil 5-iyulda", "2017-yil 30-iyunda", "2017-yil 18-iyulda", "2017-yil 11-iyulda"], c: 2 },
     { q: "Oʻzbekiston yoshlar ittifoqi qaysi organ tomonidan roʻyxatdan oʻtkaziladi?", a: ["Adliya vazirligi", "Oliy taʼlim vazirligi", "Oliy sud", "Bosh prokuratura"], c: 0 },
     { q: "Boshlangʻich tashkilot yetakchisi qanday saylanadi?", a: ["Ochiq ovoz berish yoʻli bilan", "Snoq komissiyasi qaroriga asosan", "Pedagogik ilmiy yigʻilishda", "Tayinlanadi"], c: 0 },
-    { q: "“Yoshlarga oid davlat siyosati toʻgʻrisida”gi qonun nechta moddadan iborat?", a: ["35", "30", "23", "33"], c: 3 },
+    { q: "“Yoshlarga oid davlat siyosati toʻgʻobsida”gi qonun nechta moddadan iborat?", a: ["35", "30", "23", "33"], c: 3 },
     { q: "Oʻzbekiston yoshlar ittifoqi qanday tashkilot hisoblanadi?", a: ["Davlat tashkiloti", "Nodavlat notijorat tashkiloti", "Tijorat tashkiloti", "Xalqaro tashkilot"], c: 1 },
     { q: "Yangi tahrirdagi Konstitutsiyamizni qabul qilishda nechta davlat tajribasi oʻrganildi?", a: ["120 dan ortiq", "190 dan ortiq", "130 dan ortiq", "56 dan ortiq"], c: 1 },
     { q: "Konstitutsiyaning 25-moddasi: Inson hayotiga suiqasd qilish...", a: ["qonun bilan taʼqiqlangan", "xalqaro talabalrga mos emas", "eng ogʻir jinoyatdir", "oʻlim jazosiga olib keladi"], c: 2 },
     { q: "Toʻrt ulus tarixi asari muallifi kim?", a: ["Mirzo Ulugʻbek", "Abdullaxon", "Alisher Navoiy", "Zaxiriddin Muhammad Bobur"], c: 0 },
     { q: "Axloqiy, badiiy, diniy, milliy qadriyatlar majmuasi bu - ?", a: ["Mafkura", "Maʼnaviyat", "Madaniyat", "Tarix"], c: 1 },
     { q: "“Haq olinur, berilmas” shiori kimga tegishli?", a: ["Abdulla Avloniy", "Mahmudxoʻja Behbudiy", "Munavvarqori", "Abdulla Qodiriy"], c: 1 },
-
-    // 3-VARIANT
     { q: "Yuksak natijaga erishayotgan yigitlar uchun qanday davlat mukofoti taʼsis etilgan?", a: ["“Kelajak bunyodkori”", "“Jasoratli yoshlar”", "“Matonat” medali", "“Mard oʻgʻlon”"], c: 3 },
     { q: "Oʻzbekistonda nechta siyosiy partiya faoliyat koʻrsatadi?", a: ["3 ta", "4 ta", "5 ta", "2 ta"], c: 2 },
     { q: "AYSESKO tomonidan qaysi shahar Islom madaniyati poytaxti deb eʼlon qilingan?", a: ["Fargʻona", "Toshkent shahri", "Samaraqand", "Margʻilon"], c: 1 },
@@ -46,8 +41,6 @@ const quizData = [
     { q: "Oʻzbekiston 1993-yilda BMTning qaysi muassasasiga aʼzo boʻldi?", a: ["YUNESKO", "Xalqaro valyuta fondi", "Butunjahon banki", "YUNIDO"], c: 0 },
     { q: "Oʻrta asrlarda Shayx ur-rais nomi bilan mashhur boʻlgan alloma?", a: ["Abu Ali ibn Sino", "Imom Buxoriy", "Abu Nasr Farobiy", "Abu Rayhon Beruniy"], c: 0 },
     { q: "“Inson qadri deganda...” ushbu jumlalar muallifi kim?", a: ["Akmal Saidov", "Samuyel Xantington", "Shavkat Mirziyoyev", "Mahatma Gandi"], c: 2 },
-
-    // 4-VARIANT
     { q: "Qaysi kun “Yoshlar kuni” deb belgilandi?", a: ["30-iyul", "30-iyun", "13-avgust", "1-avgust"], c: 1 },
     { q: "Davlatimizning oliy mukofoti bu - ?", a: ["Mehnat shuhrati", "Oʻzbekiston Iftihori", "Oʻzbekiston Qahramoni", "Doʻstlik ordeni"], c: 2 },
     { q: "Oʻzbekiston BMTga qachon aʼzo boʻldi?", a: ["1991-yil mart", "1992-yil dekabr", "1992-yil mart", "1991-yil dekabr"], c: 2 },
@@ -60,13 +53,12 @@ const quizData = [
     { q: "Referendum nima?", a: ["Maslahatlashuv", "Umumxalq muhokamasi", "Ijtimoiy soʻrov", "Fuqarolarning umumxalq ovozi"], c: 3 },
     { q: "Sohibqiron Temur tuzuklarida saltanat qoidalari necha toifaga boʻlingan?", a: ["11 toifa", "12 toifa", "13 toifa", "14 toifa"], c: 1 },
     { q: "Nikoh yoshi erkaklar va ayollar uchun necha yosh belgilangan?", a: ["18/17", "18/19", "18 yosh", "17 yosh"], c: 2 },
-
-    // QOLGAN SAVOLLAR (To'ldirish uchun)
     { q: "Oliy Majlis Senati a’zolari soni nechta?", a: ["100 ta", "85 ta", "65 ta", "150 ta"], c: 2 },
     { q: "Viloyat hokimi kim tomonidan tayinlanadi?", a: ["Xalq deputatlari", "Prezident", "Bosh vazir", "Senat"], c: 1 },
     { q: "O'zbekistonning poytaxti qaysi shahar?", a: ["Samarqand", "Buxoro", "Toshkent", "Xiva"], c: 2 },
     { q: "Konstitutsiyaning nechanchi moddasida vatanparvarlik haqida aytilgan?", a: ["52-modda", "40-modda", "15-modda", "60-modda"], c: 0 },
-    { q: "Mahalla raisi necha yilga saylanadi?", a: ["2 yil", "3 yil", "5 yil", "4 yil"], c: 1 }
+    { q: "Mahalla raisi necha yilga saylanadi?", a: ["2 yil", "3 yil", "5 yil", "4 yil"], c: 1 },
+    { q: "O'zbekiston Respublikasi Prezidentining vakolat muddati necha yil?", a: ["5 yil", "7 yil", "4 yil", "6 yil"], c: 1 }
 ];
 
 let currentIdx = 0;
@@ -101,7 +93,7 @@ function loadQuiz() {
     aEl.innerHTML = "";
     tEl.innerText = quizData.length;
     cEl.innerText = currentIdx + 1;
-    nextBtn.classList.add("hide");
+    nextBtn.classList.add("hide"); // Har yangi savolda "Keyingi" yashiriladi
 
     currentQuiz.a.forEach((ans, i) => {
         const btn = document.createElement("button");
@@ -113,20 +105,22 @@ function loadQuiz() {
 }
 
 function checkAnswer(selected, btn) {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); // Javob berilganda vaqt to'xtaydi
     const correct = quizData[currentIdx].c;
     const allBtns = document.querySelectorAll("#answers button");
     
-    allBtns.forEach(b => b.disabled = true);
+    allBtns.forEach(b => b.disabled = true); // Boshqa tugmalarni bosib bo'lmaydi
 
     if (selected === correct) {
         btn.classList.add("correct");
         score++;
     } else {
         btn.classList.add("wrong");
-        allBtns[correct].classList.add("correct");
+        allBtns[correct].classList.add("correct"); // To'g'ri javobni ko'rsatadi
     }
-    nextBtn.classList.remove("hide");
+    
+    // MUHIM: Faqat "Keyingi savol" tugmasini chiqaramiz, avtomatik o'tib ketmaydi!
+    nextBtn.classList.remove("hide"); 
 }
 
 function autoSkip() {
@@ -134,7 +128,7 @@ function autoSkip() {
     const allBtns = document.querySelectorAll("#answers button");
     allBtns.forEach(b => b.disabled = true);
     allBtns[correct].classList.add("correct");
-    nextBtn.classList.remove("hide");
+    nextBtn.classList.remove("hide"); // Vaqt tugasa ham "Keyingi" tugmasi chiqadi
 }
 
 function nextQuestion() {
