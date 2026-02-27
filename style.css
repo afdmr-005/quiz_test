@@ -19,7 +19,6 @@ body {
 }
 
 h1 { color: #333; font-size: 24px; margin-bottom: 20px; }
-
 h2 { font-size: 18px; color: #444; margin-bottom: 20px; line-height: 1.5; }
 
 button {
@@ -36,9 +35,29 @@ button {
     text-align: left;
 }
 
-button:hover {
-    background: #e2e6ea;
-    border-color: #adb5bd;
+button:hover { background: #e2e6ea; }
+
+/* To'g'ri va xato javoblar uchun ranglar */
+button.correct {
+    background-color: #28a745 !important;
+    color: white !important;
+    border-color: #218838 !important;
+}
+
+button.wrong {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #c82333 !important;
+}
+
+/* Yakunlash tugmasi stili */
+#finish-btn {
+    margin-top: 20px;
+    background-color: #ffc107;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: none;
 }
 
 .retry-btn {
