@@ -74,15 +74,16 @@ const timerEl = document.getElementById("timer");
 const nextBtn = document.getElementById("next-btn");
 
 function startTimer() {
-    timeLeft = 45;
+    clearInterval(timerInterval); // Eski taymerni o'chirib yuborish
+    timeLeft = 45; // Vaqtni 45 ga qaytarish
     timerEl.innerText = timeLeft;
-    clearInterval(timerInterval);
+    
     timerInterval = setInterval(() => {
         timeLeft--;
         timerEl.innerText = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            nextQuestion(); // Vaqt tugasa avtomatik keyingi savolga o'tish
+            nextQuestion(); // Vaqt tugasa avtomatik keyingisiga o'tadi
         }
     }, 1000);
 }
@@ -101,11 +102,12 @@ function loadQuiz() {
         btn.onclick = (e) => checkAnswer(i, e.target);
         aEl.appendChild(btn);
     });
-    startTimer();
+    
+    startTimer(); // Har bir savol yuklanganda taymerni ishga tushiramiz
 }
 
 function checkAnswer(selected, btn) {
-    // JAVOB BELGILANGANDA TAYMER TO'XTAMAYDI (setInterval to'xtatilmadi)
+    // Javob tanlanganda taymer to'xtamaydi (clearInterval qilinmadi)
     const correct = quizData[currentIdx].c;
     const allBtns = document.querySelectorAll("#answers button");
     
@@ -132,7 +134,7 @@ function nextQuestion() {
 }
 
 function showResult() {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); // Test tugagach taymerni butunlay to'xtatish
     document.getElementById("quiz").classList.add("hide");
     document.querySelector(".controls").classList.add("hide");
     document.getElementById("result").classList.remove("hide");
